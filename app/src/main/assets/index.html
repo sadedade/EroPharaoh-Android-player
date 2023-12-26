@@ -5,51 +5,69 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Viewer</title>
-		<style>
-			#lol {
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-				justify-content: center;
-				height: 100vh;
-				background-color: black;
-				margin: 0;
-				color: aliceblue;
-				font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-			}
-		
-			#lol button {
-				color: black;
-				margin: 5px;
-				padding: 10px;
-				border-radius: 5px;
-				border: none;
-			}
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			background: #0f2600;
+		}
 
-			#ruffle {
-				overflow: hidden;
-			}
+		#container {
+			display: grid;
+			grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+			justify-items: center;
+			row-gap: 75px;
+			width: 100%;
+			height: 100%;
+		}
 
-		</style>
+		button {
+			position: relative;
+			width: 300px;
+			height: 250px;
+			border-radius: 10px;
+			/* Adjust the background image here */
+			background-size: cover;
+			background-position: center;
+			color: #fff;
+			font-size: 20px;
+			border: none;
+			outline: none;
+			cursor: pointer;
+			text-shadow: 0 4px 4px #000;
+			box-shadow: inset 0 0 10px 0px #000000;
+			overflow: hidden;
+		}
+
+
+		#ruffle {
+			overflow: hidden;
+		}
+	</style>
 </head>
 
-<body style="background-color: black; margin: 0;">
+<body>
 	<div id='ruffle'></div>
-		
-	<div id="lol">
-		<img src="1.png">
-		<button id="button1">America</button>
-		<button id="button2">Beth</button>
-		<button id="button3">Gloriosa</button>
-		<button id="button4">Grade</button>
-		<button id="button5">Lana</button>
-		<button id="button6">Lois</button>
-		<button id="button7">May</button>
-		<button id="button8">Mea</button>
-		<button id="button9">Regular</button>
-		<button id="button10">Skullgirl</button>
-		<button id="button11">Supergirl</button>
-		<button id="button12">Tylee</button>
+	<div id="hide">
+	<a href="https://eropharaoh.newgrounds.com/">
+		<img src="1.png"
+			style="margin-top: 50px; justify-content: center; display: block; margin-left: auto; margin-right: auto;">
+	</a>		<br><br><br>
+		<div id="container">
+			<button id="button1" style="background-image: url('t_1.png');"></button>
+			<button id="button2" style="background-image: url('t_2.png');"></button>
+			<button id="button3" style="background-image: url('t_3.png');"></button>
+			<button id="button4" style="background-image: url('t_4.png');"></button>
+			<button id="button5" style="background-image: url('t_5.png');"></button>
+			<button id="button6" style="background-image: url('t_6.png');"></button>
+			<button id="button7" style="background-image: url('t_7.png');"></button>
+			<button id="button8" style="background-image: url('t_8.png');"></button>
+			<button id="button9" style="background-image: url('t_9.png');"></button>
+			<button id="button10" style="background-image: url('t_10.png');"></button>
+			<button id="button11" style="background-image: url('t_11.png');"></button>
+			<button id="button12" style="background-image: url('t_12.png');"></button>
+		</div>
+		<br><br><br>
 	</div>
 	<script src="ruffle/ruffle.js"></script>
 	<script>
@@ -116,7 +134,7 @@
 		});
 
 		function embedSWF() {
-			document.getElementById('lol').style.display = 'none';
+			document.getElementById('hide').style.display = 'none';
 			var swfobject = {};
 			swfobject.embedSWF = function (url, cont, width, height) {
 				var ruffle = window.RufflePlayer.newest(),

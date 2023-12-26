@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Viewer</title>
+		<style>
+			#lol {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				height: 100vh;
+				background-color: black;
+				margin: 0;
+				color: aliceblue;
+				font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+			}
+		
+			#lol button {
+				color: black;
+				margin: 5px;
+				padding: 10px;
+				border-radius: 5px;
+				border: none;
+			}
+
+			#ruffle {
+				overflow: hidden;
+			}
+
+		</style>
+</head>
+
+<body style="background-color: black; margin: 0;">
+	<div id='ruffle'></div>
+		
+	<div id="lol">
+		<img src="1.png">
+		<button id="button1">America</button>
+		<button id="button2">Beth</button>
+		<button id="button3">Gloriosa</button>
+		<button id="button4">Grade</button>
+		<button id="button5">Lana</button>
+		<button id="button6">Lois</button>
+		<button id="button7">May</button>
+		<button id="button8">Mea</button>
+		<button id="button9">Regular</button>
+		<button id="button10">Skullgirl</button>
+		<button id="button11">Supergirl</button>
+		<button id="button12">Tylee</button>
+	</div>
+	<script src="ruffle/ruffle.js"></script>
+	<script>
+		var goto = ""
+
+		document.getElementById('button1').addEventListener('click', function () {
+			goto = 'AmericanDad.swf';
+			embedSWF();
+		});
+
+		document.getElementById('button2').addEventListener('click', function () {
+			goto = 'beth.swf';
+			embedSWF();
+		});
+
+		document.getElementById('button3').addEventListener('click', function () {
+			goto = 'gloriosa.swf';
+			embedSWF();
+		});
+
+		document.getElementById('button4').addEventListener('click', function () {
+			goto = 'grade.swf';
+			embedSWF();
+		});
+
+		document.getElementById('button5').addEventListener('click', function () {
+			goto = 'lana.swf';
+			embedSWF();
+		});
+
+		document.getElementById('button6').addEventListener('click', function () {
+			goto = 'lois.swf';
+			embedSWF();
+		});
+
+		document.getElementById('button7').addEventListener('click', function () {
+			goto = 'may.swf';
+			embedSWF();
+		});
+
+		document.getElementById('button8').addEventListener('click', function () {
+			goto = 'mea.swf';
+			embedSWF();
+		});
+
+		document.getElementById('button9').addEventListener('click', function () {
+			goto = 'regular.swf';
+			embedSWF();
+		});
+
+		document.getElementById('button10').addEventListener('click', function () {
+			goto = 'skullgirls.swf';
+			embedSWF();
+		});
+
+		document.getElementById('button11').addEventListener('click', function () {
+			goto = 'supergirl.swf';
+			embedSWF();
+		});
+
+		document.getElementById('button12').addEventListener('click', function () {
+			goto = 'tylee.swf';
+			embedSWF();
+		});
+
+		function embedSWF() {
+			document.getElementById('lol').style.display = 'none';
+			var swfobject = {};
+			swfobject.embedSWF = function (url, cont, width, height) {
+				var ruffle = window.RufflePlayer.newest(),
+					player = Object.assign(document.getElementById(cont).appendChild(ruffle.createPlayer()), {
+						width: width,
+						height: height,
+						style: 'width: ' + width + 'vw; height: ' + height + 'vh',
+					});
+
+				player.load({ url: url });
+			}
+			swfobject.embedSWF("flashfiles/" + goto, 'ruffle', 100, 100);
+		}
+	</script>
+</body>
+
+</html>
